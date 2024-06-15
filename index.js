@@ -23,7 +23,7 @@ renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
 
 //3d control
 const controls = new OrbitControls(camera, renderer.domElement);
-// controls.enableDamping = true;
+controls.enableDamping = true;
 // controls.dampingFactor = 0.3;
 
 //light
@@ -80,7 +80,7 @@ moonMesh.position.set(3, 0, 0);
 moonMesh.scale.setScalar(0.27);
 moonGroup.add(moonMesh);
 
-//stars
+// stars
 const stars = addStar(2000);
 scene.add(stars);
 
@@ -101,13 +101,14 @@ function addStar(size = 500) {
   return star;
 }
 
+
 function animate(t = 0) {
   requestAnimationFrame(animate);
   earthMesh.rotation.y += 0.002;
   lightsMesh.rotation.y += 0.002;
   cloudsMesh.rotation.y += 0.0023;
   moonGroup.rotation.y -= 0.005;
-  stars.rotation.y += 0.0002;
+  // stars.rotation.y += 0.0002;
   renderer.render(scene, camera);
   if (useAnimatedCamera) {
     let time = t * 0.0002;
