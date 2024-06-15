@@ -7,3 +7,5 @@ visit site: https://vinayakchandra.github.io/3D-Earth-Moon/
 - Scroll to zoom in/out.
 - Right click to change perspective.
 - Double click to reset.
+
+![img](img.png)
