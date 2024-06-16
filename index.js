@@ -9,8 +9,7 @@ const scene = new THREE.Scene();
 
 //camera
 const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
-camera.position.z = 5;
-const cameraDistance = 4;
+const cameraDistance = 6;
 let useAnimatedCamera = true;
 
 //renderer
@@ -37,9 +36,8 @@ earthGroup.rotation.z = -23.4 * Math.PI / 180; //rotate earth
 scene.add(earthGroup);
 
 //earth
-const detail = 16;
 const loader = new THREE.TextureLoader();
-const geometry = new THREE.IcosahedronGeometry(1, detail);
+const geometry = new THREE.IcosahedronGeometry(1, 16);
 const material = new THREE.MeshPhongMaterial({
   map: loader.load("./textures/00_earthmap1k.jpg"),
   specularMap: loader.load("./textures/02_earthspec1k.jpg"),
@@ -101,14 +99,13 @@ function addStar(size = 500) {
   return star;
 }
 
-
 function animate(t = 0) {
   requestAnimationFrame(animate);
   earthMesh.rotation.y += 0.002;
   lightsMesh.rotation.y += 0.002;
   cloudsMesh.rotation.y += 0.0023;
   moonGroup.rotation.y -= 0.005;
-  // stars.rotation.y += 0.0002;
+  stars.rotation.y += 0.0002;
   renderer.render(scene, camera);
   if (useAnimatedCamera) {
     let time = t * 0.0002;
