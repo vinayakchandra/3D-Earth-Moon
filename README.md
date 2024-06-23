@@ -3,9 +3,9 @@
 visit site: https://vinayakchandra.github.io/3D-Earth-Moon/
 
 - Made using `Three.js`.
-- Single click to view the space in 3D.
+- Left click and drag to view the space in 3D.
 - Scroll to zoom in/out.
-- Right click to change perspective.
+- Right click and drag to change perspective.
 - Double click to reset.
 
 ![img](img.png)
